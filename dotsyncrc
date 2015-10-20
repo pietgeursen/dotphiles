@@ -63,9 +63,9 @@ dotsyncrc
 #task/taskrc
 tmux/tmux.conf
 #tmux/tmuxinator
-#vim/dotvim:.vim
+vim/dotvim:.vim
 vim/vimrc
-#vim/gvimrc
+vim/gvimrc
 #wget/wgetrc
 zsh/fasdrc
 zsh/dotzsh:.zsh
