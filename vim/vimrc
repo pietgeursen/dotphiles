@@ -22,7 +22,10 @@ if has("user_commands")
   source ~/.vim/vundles.vim
   " Add extra bundles here...
   " Bundle 'reponame'
+  Bundle 'altercation/vim-colors-solarized'
 endif
 
 " Customize to your needs...
-
+syntax enable
+set background=dark
+colorscheme solarized
