@@ -32,6 +32,8 @@ if has("user_commands")
 
   " Optional:
   Plugin 'honza/vim-snippets'
+  Plugin 'geekjuice/vim-spec'
+  Plugin 'jgdavey/tslime.vim'
 endif
 
 " Customize to your needs...
@@ -43,6 +45,7 @@ colorscheme base16-default
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let g:ctrlp_working_path_mode = 'ra'
+
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_use_caching = 0
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
@@ -50,4 +53,19 @@ noremap <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_open_new_file = 'r'
 
+" vim spec
+nmap <BS> :call RunCurrentSpecFile()<CR>
+nmap \ :call RunNearestSpec()<CR>
+nmap <CR> :call RunLastSpec()<CR>
+map <leader>s :call RunAllSpecs()<CR>
+map <leader>a :call Send_to_Tmux("rake\n")<CR>
+map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
+nmap ` :call Send_to_Tmux("npm test\n")<CR>
 
+let g:npm_test_command = ':call Send_to_Tmux("TEST={spec} npm run vim-spec\n")'
+let g:rspec_command = ':call Send_to_Tmux("VIM=1 bundle exec rspec {spec}\n")'
+let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha --recursive {spec}\n")'
+let g:cucumber_command = ':call Send_to_Tmux("VIM=1 cucumber {spec}\n")'
+let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
+
+map <leader>t :call Send_to_Tmux("rake cucumber:wip\n")
