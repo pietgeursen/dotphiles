@@ -62,7 +62,7 @@ dotsyncrc
 #task/task
 #task/taskrc
 tmux/tmux.conf
-#tmux/tmuxinator
+tmux/tmuxinator
 vim/dotvim:.vim
 vim/vimrc
 vim/gvimrc
