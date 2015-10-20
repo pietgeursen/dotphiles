@@ -40,7 +40,7 @@ endif
 syntax enable
 set background=dark
 colorscheme base16-default
-
+let base16colorspace=256
 "" ctrlp.vim
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
