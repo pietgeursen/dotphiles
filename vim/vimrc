@@ -43,6 +43,7 @@ set background=dark
 colorscheme base16-default
 let base16colorspace=256
 
+nmap <leader>q :bd<CR>
 " Fugitive
 nmap <leader>t :Gstatus<CR>
 nmap <leader>r :Git co 
