@@ -43,6 +43,9 @@ set background=dark
 colorscheme base16-default
 let base16colorspace=256
 
+"Remap ESC keys
+:imap jj <Esc>
+
 " Tab between buffers
 noremap <tab> <c-w><c-w>
 nmap <leader>q :bd<CR>
