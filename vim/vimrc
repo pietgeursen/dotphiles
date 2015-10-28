@@ -35,6 +35,7 @@ if has("user_commands")
   Plugin 'honza/vim-snippets'
   Plugin 'geekjuice/vim-spec'
   Plugin 'jgdavey/tslime.vim'
+  Plugin 'tpope/vim-dispatch.git'
 endif
 
 " Customize to your needs...
@@ -60,8 +61,8 @@ nmap <leader>q :bd<CR>
 " Fugitive
 nmap <leader>t :Gstatus<CR>
 nmap <leader>r :Git co 
-nmap <leader>u :Git push origin 
-nmap <leader>um :Git push origin master <CR>
+nmap <leader>u :Gpush origin 
+nmap <leader>um :Gpush origin master <CR>
 
 "" ctrlp.vim
 set wildmode=list:longest,list:full
