@@ -46,6 +46,13 @@ let base16colorspace=256
 "Remap ESC keys
 :imap jj <Esc>
 
+"Paste form os clipboard
+noremap <leader>y "+y
+noremap <leader>yy "+Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  +<CR>:set nopaste<CR>
+
 " Tab between buffers
 noremap <tab> <c-w><c-w>
 nmap <leader>q :bd<CR>
