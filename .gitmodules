@@ -1,6 +1,9 @@
+[submodule "dotsync"]
+    path = dotsync
+    url = https://github.com/dotphiles/dotsync.git
 [submodule "vim/--force"]
-	path = vim/--force
-	url = https://github.com/pietgeursen/dotvim.git
+    path = vim/--force
+    url = https://github.com/pietgeursen/dotvim.git
 [submodule "vim/dotvim"]
-	path = vim/dotvim
-	url = https://github.com/pietgeursen/dotvim.git
+    path = vim/dotvim
+    url = https://github.com/pietgeursen/dotvim.git
