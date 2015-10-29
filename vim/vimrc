@@ -36,6 +36,8 @@ if has("user_commands")
   Plugin 'geekjuice/vim-spec'
   Plugin 'jgdavey/tslime.vim'
   Plugin 'tpope/vim-dispatch.git'
+  Plugin 'scrooloose/nerdtree'
+
 endif
 
 " Customize to your needs...
