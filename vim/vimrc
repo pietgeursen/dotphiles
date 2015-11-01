@@ -32,12 +32,12 @@ if has("user_commands")
   Plugin 'garbas/vim-snipmate'
 
   " Optional:
-  Plugin 'honza/vim-snippets'
+  Plugin 'pietgeursen/vim-snippets'
   Plugin 'geekjuice/vim-spec'
   Plugin 'jgdavey/tslime.vim'
   Plugin 'tpope/vim-dispatch.git'
   Plugin 'scrooloose/nerdtree'
-
+  Plugin 'vim-scripts/YankRing.vim'
 endif
 
 " Customize to your needs...
@@ -94,3 +94,5 @@ let g:cucumber_command = ':call Send_to_Tmux("VIM=1 cucumber {spec}\n")'
 let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
 
 "map <leader>t :call Send_to_Tmux("rake cucumber:wip\n")
+" npm build via tmux
+nmap <C-B> :call Send_to_Tmux("npm run build\n")<CR>
