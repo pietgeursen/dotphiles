@@ -1,6 +1,3 @@
-[submodule "vim/--force"]
-    path = vim/--force
-    url = https://github.com/pietgeursen/dotvim.git
 [submodule "vim/dotvim"]
     path = vim/dotvim
     url = https://github.com/pietgeursen/dotvim.git
