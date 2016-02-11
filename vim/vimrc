@@ -95,4 +95,5 @@ let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b -
 
 "map <leader>t :call Send_to_Tmux("rake cucumber:wip\n")
 " npm build via tmux
-nmap <C-B> :call Send_to_Tmux("webpack; node bundle.js")<CR>
+nmap 1 :call Send_to_Tmux("npm run build\n")<CR>
+nmap 2 :call Send_to_Tmux("npm start\n")<CR>
