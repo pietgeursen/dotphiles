@@ -17,6 +17,8 @@ export DOTZSH="$HOME/.zsh"
 source "$DOTZSH/env.zsh"
 
 # Customize to your needs...
+alias kak='cd ~/Documents/EDA/kakapo'
+alias kar='cd ~/Documents/EDA/karearea'
 alias weka='cd ~/Documents/EDA/webweka'
 alias gitpass='git config credential.helper store'
 alias agi='sudo apt-get install'
