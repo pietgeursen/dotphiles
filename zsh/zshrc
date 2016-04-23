@@ -132,4 +132,4 @@ source ~/.nvm/nvm.sh
 
 export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript:/usr/local/lib/node_modules
 export NODE_PATH=$NODE_PATH:`npm root -g`
-export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript:/usr/local/lib/node_modules:/home/piet/.nvm/versions/node/v0.12.7/lib/node_modules:/home/piet/.nvm/versions/node/v5.0.0/lib/node_modules
+export NODE_PATH=/usr/lib/nodejs:/usr/lib/node_modules:/usr/share/javascript:/usr/local/lib/node_modules:/home/piet/.nvm/versions/node/v0.12.7/lib/node_modules:/home/piet/.nvm/versions/node/v5.0.0/lib/node_modules:/home/piet/.nvm/versions/node/v5.7.1/lib/node_modules

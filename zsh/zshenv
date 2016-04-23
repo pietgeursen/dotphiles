@@ -19,6 +19,7 @@ source "$DOTZSH/env.zsh"
 # Customize to your needs...
 alias kak='cd ~/Documents/EDA/kakapo'
 alias kar='cd ~/Documents/EDA/karearea'
+alias hi='cd ~/Documents/EDA/hihi'
 alias weka='cd ~/Documents/EDA/webweka'
 alias gitpass='git config credential.helper store'
 alias agi='sudo apt-get install'
@@ -33,3 +34,6 @@ alias gpo='git push origin'
 alias glo='git pull origin'
 alias gpom='git push origin master'
 alias glom='git pull origin master'
+#NPM registry change
+alias npmeda='npm config set registry http://192.168.1.100:8080'
+alias npmext='npm config set registry https://registry.npmjs.org/' 
