@@ -38,6 +38,7 @@ if has("user_commands")
   Plugin 'tpope/vim-dispatch.git'
   Plugin 'scrooloose/nerdtree'
   Plugin 'vim-scripts/YankRing.vim'
+  Plugin 'https://github.com/lambdatoast/elm.vim.git'
 endif
 
 " Customize to your needs...
@@ -86,8 +87,10 @@ map <leader>s :call RunAllSpecs()<CR>
 map <leader>a :call Send_to_Tmux("rake\n")<CR>
 map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
 nmap ` :call Send_to_Tmux("npm test\n")<CR>
+let g:node_file_command = ':call Send_to_Tmux("node {spec}\n")'
+nmap 1 :node_file_command<CR>
 
-let g:npm_test_command = ':call Send_to_Tmux("TEST={spec} npm run vim-spec\n")'
+
 let g:rspec_command = ':call Send_to_Tmux("VIM=1 bundle exec rspec {spec}\n")'
 let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha --recursive {spec}\n")'
 let g:cucumber_command = ':call Send_to_Tmux("VIM=1 cucumber {spec}\n")'
@@ -95,5 +98,4 @@ let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b -
 
 "map <leader>t :call Send_to_Tmux("rake cucumber:wip\n")
 " npm build via tmux
-nmap 1 :call Send_to_Tmux("npm run build\n")<CR>
 nmap 2 :call Send_to_Tmux("npm start\n")<CR>

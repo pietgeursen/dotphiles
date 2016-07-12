@@ -16,11 +16,19 @@ export DOTZSH="$HOME/.zsh"
 # Source environment settings
 source "$DOTZSH/env.zsh"
 
+# Beagelebone
+alias bone='ssh root@192.168.7.2'
+
 # Customize to your needs...
 alias kak='cd ~/Documents/EDA/kakapo'
 alias kar='cd ~/Documents/EDA/karearea'
 alias hi='cd ~/Documents/EDA/hihi'
+alias ko='cd ~/Documents/EDA/kotare'
+alias ro='cd ~/Documents/EDA/roa'
+alias kea='cd ~/Documents/EDA/kea'
 alias weka='cd ~/Documents/EDA/webweka'
+alias bot='cd ~/Documents/projects/sbot-gatherings'
+alias gather='cd ~/Documents/projects/ssb-gather-ui'
 alias gitpass='git config credential.helper store'
 alias agi='sudo apt-get install'
 alias conkat='cd ~/Documents/EDA/kata/conway'
