@@ -1,6 +1,9 @@
 dotphiles
 =========
 
+## Vim version
+`sudo apt get install vim-gtk3` to get clipboard support.
+
 A community driven framework of dotfiles, for the usual terminal apps and
 shells, designed to work across multiple platforms and degrade for older
 versions of software or O/S, allowing you to use the same settings on all
