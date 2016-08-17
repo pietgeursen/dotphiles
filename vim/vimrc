@@ -39,7 +39,15 @@ if has("user_commands")
   Plugin 'scrooloose/nerdtree'
   Plugin 'vim-scripts/YankRing.vim'
   Plugin 'https://github.com/lambdatoast/elm.vim.git'
+  Plugin 'scrooloose/syntastic.git'
+  Plugin 'pangloss/vim-javascript'
 endif
+
+" Use standard style
+let g:syntastic_javascript_checkers = ['standard']
+" Use standard to reformat on save
+autocmd bufwritepost *.js silent !standard-format -w %
+set autoread
 
 " Customize to your needs...
 syntax enable
@@ -50,7 +58,7 @@ let base16colorspace=256
 "Remap ESC keys
 :imap jj <Esc>
 
-"Paste form os clipboard
+"Paste from os clipboard
 noremap <leader>y "+y
 noremap <leader>yy "+Y
 
@@ -59,6 +67,9 @@ noremap <leader>p :set paste<CR>:put  +<CR>:set nopaste<CR>
 
 " Tab between buffers
 noremap <tab> <c-w><c-w>
+" Ctrl tab between alternate buffer
+nmap <leader><tab> <c-^> 
+
 nmap <leader>q :bd<CR>
 
 " Fugitive
