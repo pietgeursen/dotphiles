@@ -65,6 +65,7 @@ tmux/tmux.conf
 tmux/tmuxinator
 vim/dotvim:.vim
 vim/vimrc
+vim/vimrc:.config/nvim/init.vim #This might not work.
 vim/gvimrc
 #wget/wgetrc
 zsh/fasdrc
