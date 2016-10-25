@@ -1,62 +1,71 @@
-"
-" dotphiles : https://github.com/dotphiles/dotphiles
-"
-" Setup vim and load required plugins before dotvim
-"
-" Authors:
-"   Ben O'Hara <bohara@gmail.com>
-"
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Call dotvim
-source ~/.vim/dotvim.vim
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'pietgeursen/vim-snippets'
+Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/syntastic.git'
+Plugin 'pangloss/vim-javascript'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'moll/vim-node'
+Plugin 'mileszs/ack.vim'
+call vundle#end()            " required
 
-if has("user_commands")
-  set nocompatible
-  filetype off
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
-  "let g:vundles=['general', 'git', 'hg', 'programming', 'completion', 'ruby', 'python', 'misc']
-  "let g:vundles=['general', 'programming', 'ruby']
-  let g:vundles=[]
-  let g:neocomplcache_enable_at_startup = 1
-  " Load 'vundles'
-  source ~/.vim/vundles.vim
-  " Add extra bundles here...
-  " Bundle 'reponame'
-  Bundle 'chriskempson/base16-vim'
-  Bundle 'ctrlpvim/ctrlp.vim'
-  Bundle 'easymotion/vim-easymotion'
-  Plugin 'MarcWeber/vim-addon-mw-utils'
-  Plugin 'tomtom/tlib_vim'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'garbas/vim-snipmate'
+filetype plugin indent on    " required
 
-  " Optional:
-  Plugin 'pietgeursen/vim-snippets'
-  Plugin 'geekjuice/vim-spec'
-  Plugin 'jgdavey/tslime.vim'
-  Plugin 'tpope/vim-dispatch.git'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'vim-scripts/YankRing.vim'
-  Plugin 'https://github.com/lambdatoast/elm.vim.git'
-  Plugin 'scrooloose/syntastic.git'
-  Plugin 'pangloss/vim-javascript'
+" directory settings
+set nobackup            " do not write backup files
+set noswapfile          " do not write .swp files
+if has("persistent_undo")
+  silent !mkdir -vp ~/.backup/vim/undo/ > /dev/null 2>&1
+  set backupdir=~/.backup/vim,.       " list of directories for the backup file
+  set directory=~/.backup/vim,~/tmp,. " list of directory names for the swap file
+  set undofile
+  set undodir=~/.backup/vim/undo/,~/tmp,.
 endif
 
-" Use standard style
-let g:syntastic_javascript_checkers = ['standard']
-" Use standard to reformat on save
-autocmd bufwritepost *.js silent !standard-format -w %
-set autoread
+" let g:syntastic_javascript_checkers = ['standard']
 
-" Customize to your needs...
 syntax enable
+
+"nerdtree toggle
+map <F3> :NERDTreeToggle<CR>
+
+" colours
 set background=dark
-colorscheme base16-default-dark
-let base16colorspace=256
+colorscheme candycode
+
+"Remap leader
+let mapleader = ","
 
 "Remap ESC keys
 :imap jj <Esc>
+:tnoremap jj <C-\><C-n>
+" Tab between buffers
+noremap <tab> <c-w><c-w>
+" Ctrl tab between alternate buffer
+nmap <leader><tab> <c-^> 
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nmap <leader>q :bd<CR>
 
 "Paste from os clipboard
 noremap <leader>y "+y
@@ -64,13 +73,6 @@ noremap <leader>yy "+Y
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  +<CR>:set nopaste<CR>
-
-" Tab between buffers
-noremap <tab> <c-w><c-w>
-" Ctrl tab between alternate buffer
-nmap <leader><tab> <c-^> 
-
-nmap <leader>q :bd<CR>
 
 " Fugitive
 nmap <leader>t :Gstatus<CR>
@@ -80,7 +82,7 @@ nmap <leader>um :Gpush origin master <CR>
 
 "" ctrlp.vim
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__,node_modules
 let g:ctrlp_working_path_mode = 'ra'
 
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -90,23 +92,13 @@ noremap <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_open_new_file = 'r'
 
-" vim spec
-nmap <BS> :call RunCurrentSpecFile()<CR>
-nmap \ :call RunNearestSpec()<CR>
-nmap <CR> :call RunLastSpec()<CR>
-map <leader>s :call RunAllSpecs()<CR>
-map <leader>a :call Send_to_Tmux("rake\n")<CR>
-map <leader>g :call Send_to_Tmux("grunt test\n")<CR>
-nmap ` :call Send_to_Tmux("npm test\n")<CR>
-let g:node_file_command = ':call Send_to_Tmux("node {spec}\n")'
-nmap 1 :node_file_command<CR>
+" send to node
+nmap <leader>n :w !node<CR>
+" test
+nmap ` :!npm test<CR>
 
+set ts=2                " number of spaces in a tab
+set sw=2                " number of spaces for indent
+set softtabstop=2
+set et                  " expand tabs into spaces
 
-let g:rspec_command = ':call Send_to_Tmux("VIM=1 bundle exec rspec {spec}\n")'
-let g:mocha_js_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha --recursive {spec}\n")'
-let g:cucumber_command = ':call Send_to_Tmux("VIM=1 cucumber {spec}\n")'
-let g:mocha_coffee_command = ':call Send_to_Tmux("NODE_ENV=test VIM=1 mocha -b --recursive --compilers coffee:coffee-script/register {spec}\n")'
-
-"map <leader>t :call Send_to_Tmux("rake cucumber:wip\n")
-" npm build via tmux
-nmap 2 :call Send_to_Tmux("npm start\n")<CR>
