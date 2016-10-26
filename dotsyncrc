@@ -31,6 +31,7 @@ dotsyncrc
 #git/gitk
 #gnupg
 #grc
+i3/config:.config/i3/config
 #input/editrc
 #input/inputrc
 #irssi
