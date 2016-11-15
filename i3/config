@@ -13,11 +13,11 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+# font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Ubuntu Mono 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -42,6 +42,12 @@ bindsym $mod+Shift+grave exec firefox
 bindcode 233 exec xbacklight -inc 10
 # decrease brightness 
 bindcode 232 exec xbacklight -dec 10
+# increase volume 
+bindcode 123 exec amixer -D pulse sset Master 10%+
+# decrease volume 
+bindcode 122 exec amixer -D pulse sset Master 10%-
+# mute volume 
+bindcode 121 exec amixer -D pulse set Master 1+ toggle
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -179,8 +185,22 @@ hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
-        status_command i3status
-        tray_output primary
+  status_command i3status
+  tray_output primary
+  colors {
+    separator #969896
+    background #1d1f21
+    statusline #c5c8c6
+    focused_workspace #81a2be #81a2be #1d1f21
+    active_workspace #373b41 #373b41 #ffffff
+    inactive_workspace #282a2e #282a2e #969896
+    urgent_workspace #cc6666 #cc6666 #ffffff
+  }
 }
 
+client.focused #81a2be #81a2be #1d1f21 #282a2e
+client.focused_inactive #373b41 #373b41 #969896 #282a2e
+client.unfocused #282a2e #282a2e #969896 #282a2e
+client.urgent #373b41 #cc6666 #ffffff #cc6666

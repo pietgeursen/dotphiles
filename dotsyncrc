@@ -32,6 +32,7 @@ dotsyncrc
 #gnupg
 #grc
 i3/config:.config/i3/config
+i3status/config:.config/i3status/config
 #input/editrc
 #input/inputrc
 #irssi
