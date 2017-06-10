@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a chrome
-bindsym $mod+grave exec google-chrome 
+bindsym $mod+grave exec chromium-browser
 
 # start a firefox
 bindsym $mod+Shift+grave exec firefox
@@ -174,8 +174,8 @@ set $mode_presentation_screen Use HDMI[1] or [2]
 bindsym $mod+p mode "$mode_presentation_screen" 
 
 mode "$mode_presentation_screen" {
-  bindsym 1 exec "xrandr --output HDMI1 --auto --same-as eDP1"
-  bindsym 2 exec "xrandr --output HDMI2 --auto --same-as eDP1"
+  bindsym 1 exec "xrandr --output HDMI1 --auto --same-as eDP1 --mode 1920x1080"
+  bindsym 2 exec "xrandr --output HDMI2 --auto --same-as eDP1 --mode 1920x1080"
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }

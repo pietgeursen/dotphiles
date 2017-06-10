@@ -20,9 +20,14 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'moll/vim-node'
 Plugin 'mileszs/ack.vim'
+Plugin 'vim-scripts/paredit.vim'
+Plugin 'vim-scripts/yankring.vim'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
+
+"fix for yankring and neovim
+let g:yankring_clipboard_monitor=0
 
 " directory settings
 set nobackup            " do not write backup files
@@ -46,6 +51,9 @@ map <F3> :NERDTreeToggle<CR>
 set background=dark
 " colorscheme candycode
 colorscheme frood
+
+" Spell check on
+:setlocal spell spelllang=en_us
 
 "Remap leader
 let mapleader = ","
@@ -94,7 +102,7 @@ let g:ctrlp_map = '<leader>e'
 let g:ctrlp_open_new_file = 'r'
 
 " send to node
-nmap <leader>n :w !node<CR>
+nmap 1 :!node %<CR>
 " test
 nmap ` :!npm test<CR>
 
