@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set shell=/bin/bash
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -14,6 +15,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'pietgeursen/vim-snippets'
 Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 " Plugin 'scrooloose/syntastic.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'flazz/vim-colorschemes'
@@ -22,6 +24,8 @@ Plugin 'moll/vim-node'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'vim-scripts/yankring.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -89,6 +93,9 @@ nmap <leader>r :Git co
 nmap <leader>u :Gpush origin 
 nmap <leader>um :Gpush origin master <CR>
 
+" Ack for word under cursor
+nmap <leader>f yw:Ack "<CR>
+
 "" ctrlp.vim
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__,node_modules
@@ -110,5 +117,10 @@ set ts=2                " number of spaces in a tab
 set sw=2                " number of spaces for indent
 set softtabstop=2
 set et                  " expand tabs into spaces
+
+" ack uses ripgrep
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --no-heading'
+endif
 
 set number

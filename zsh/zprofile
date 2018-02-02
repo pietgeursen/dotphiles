@@ -10,3 +10,5 @@
 
 # Customize to your needs...
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
