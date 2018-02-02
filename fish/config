@@ -1,0 +1,30 @@
+alias bot='cd ~/Documents/projects/sbot-gatherings'
+alias gather='cd ~/Documents/projects/ssb-gathering-ui'
+alias dep='cd ~/Documents/projects/depject'
+alias vas='cd ~/Documents/projects/vas'
+alias inu='cd ~/Documents/projects/inu'
+alias pro='cd ~/Documents/projects'
+alias bay='cd ~/Documents/projects/patchbay'
+alias south='cd ~/Documents/RootSystems/41South'
+alias jou='cd ~/Dropbox/journal/'
+
+alias agi='sudo apt-get install'
+alias txn='tmux new -s'
+alias txa='tmux a -t'
+alias txl='tmux ls'
+alias ff='find . -type f -name'
+
+# Git
+alias gpo='git push origin'
+alias gst='git status'
+alias gco='git checkout'
+alias glo='git pull origin'
+alias gpom='git push origin master'
+alias glom='git pull origin master'
+
+##NPM
+alias ni='npm i' 
+alias ns='npm i --save' 
+alias nd='npm i --save-dev' 
+alias nt='npm test'
+
