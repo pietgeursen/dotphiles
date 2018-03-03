@@ -16,6 +16,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'pietgeursen/vim-snippets'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'w0rp/ale'
 " Plugin 'scrooloose/syntastic.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'flazz/vim-colorschemes'
@@ -122,5 +123,6 @@ set et                  " expand tabs into spaces
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
+
 
 set number
