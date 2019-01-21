@@ -91,7 +91,7 @@ noremap <leader>p :set paste<CR>:put  +<CR>:set nopaste<CR>
 " Fugitive
 nmap <leader>t :Gstatus<CR>
 nmap <leader>r :Git co 
-nmap <leader>u :Gpush origin 
+nmap <leader>u :Gpush origin HEAD <CR> 
 nmap <leader>um :Gpush origin master <CR>
 
 " Ack for word under cursor
@@ -124,5 +124,28 @@ if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
+" Put this in vimrc or a plugin file of your own.
+" After this is configured, :ALEFix will try and fix your JS code with ESLint.
+let g:ale_fixers = {
+\   'javascript': ['standard'],
+\}
 
+" Set this setting in vimrc if you want to fix files automatically on save.
+" This is off by default.
+let g:ale_fix_on_save = 1
+"use let g:ale_fix_on_save = 0 to disable
+
+let g:tagbar_type_rust = {
+      \ 'ctagstype' : 'rust',
+      \ 'kinds' : [
+      \'T:types,type definitions',
+      \'f:functions,function definitions',
+      \'g:enum,enumeration names',
+      \'s:structure names',
+      \'m:modules,module names',
+      \'c:consts,static constants',
+      \'t:traits',
+      \'i:impls,trait implementations',
+      \]
+      \}
 set number
