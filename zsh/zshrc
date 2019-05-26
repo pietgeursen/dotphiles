@@ -129,8 +129,8 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Documents/projects/go
 export PATH=$PATH:$GOPATH/bin
 
-##export PATH="$HOME/.rbenv/bin:$PATH"
-##eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 ## Node config
 export NVM_DIR="/home/piet/.nvm"
