@@ -17,6 +17,7 @@ alias vim=nvim
 
 # Beagelebone
 alias bone='ssh root@192.168.7.2'
+alias pbone='ssh debian@192.168.7.2' #temppwd
 
 # Customize to your needs...
 alias bot='cd ~/Documents/projects/sbot-gatherings'
@@ -25,6 +26,7 @@ alias dep='cd ~/Documents/projects/depject'
 alias vas='cd ~/Documents/projects/vas'
 alias inu='cd ~/Documents/projects/inu'
 alias pro='cd ~/Documents/projects'
+alias choir='cd ~/Documents/projects/choir'
 alias bay='cd ~/Documents/projects/patchbay'
 alias south='cd ~/Documents/RootSystems/41South'
 alias jou='cd ~/Dropbox/journal/'
