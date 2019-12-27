@@ -30,10 +30,11 @@ font pango:Ubuntu Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty 
 
 # start a chrome
-bindsym $mod+grave exec chromium-browser
+bindsym $mod+grave exec chromium
 
 # start a firefox
 bindsym $mod+Shift+grave exec firefox
@@ -43,11 +44,11 @@ bindcode 233 exec xbacklight -inc 10
 # decrease brightness 
 bindcode 232 exec xbacklight -dec 10
 # increase volume 
-bindcode 123 exec amixer -D pulse sset Master 10%+
+bindcode 123 exec amixer sset Master 10%+
 # decrease volume 
-bindcode 122 exec amixer -D pulse sset Master 10%-
+bindcode 122 exec amixer sset Master 10%-
 # mute volume 
-bindcode 121 exec amixer -D pulse set Master 1+ toggle
+bindcode 121 exec amixer set Master 1+ toggle
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -174,8 +175,8 @@ set $mode_presentation_screen Use HDMI[1] or [2]
 bindsym $mod+p mode "$mode_presentation_screen" 
 
 mode "$mode_presentation_screen" {
-  bindsym 1 exec "xrandr --output HDMI-1 --auto --same-as eDP-1 --mode 1920x1080"
-  bindsym 2 exec "xrandr --output HDMI-2 --auto --same-as eDP-1 --mode 1920x1080"
+  bindsym 1 exec "xrandr --output HDMI1 --auto --same-as eDP1 --mode 1920x1080"
+  bindsym 2 exec "xrandr --output HDMI2 --auto --same-as eDP1 --mode 1920x1080"
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }

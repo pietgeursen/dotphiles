@@ -10,11 +10,10 @@
 # Dont read global configs
 unsetopt GLOBAL_RCS
 
-# Set the path to dotzsh.
-export DOTZSH="$HOME/.zsh"
-
-# Source environment settings
-source "$DOTZSH/env.zsh"
+# use nvim not vim
+export EDITOR=nvim
+export VISUAL=nvim
+alias vim=nvim
 
 # Beagelebone
 alias bone='ssh root@192.168.7.2'
@@ -51,3 +50,4 @@ alias ns='npm i --save'
 alias nd='npm i --save-dev' 
 alias nt='npm test'
 
+alias vim='nvim'
