@@ -13,9 +13,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'pietgeursen/vim-snippets'
 Plug 'scrooloose/nerdtree'
-" Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
-" Plug 'scrooloose/syntastic.git'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'flazz/vim-colorschemes'
@@ -26,44 +24,9 @@ Plug 'vim-scripts/paredit.vim'
 Plug 'vim-scripts/yankring.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'airblade/vim-gitgutter'
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'racer-rust/vim-racer'
-Plug 'OmniSharp/omnisharp-vim'
+" Plug 'OmniSharp/omnisharp-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
-
-" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"" let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
-"Bundle 'ctrlpvim/ctrlp.vim'
-"Bundle 'easymotion/vim-easymotion'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'garbas/vim-snipmate'
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'pietgeursen/vim-snippets'
-"Plugin 'scrooloose/nerdtree'
-"" Plugin 'majutsushi/tagbar'
-"Plugin 'w0rp/ale'
-"" Plugin 'scrooloose/syntastic.git'
-"Plugin 'mxw/vim-jsx'
-"Plugin 'pangloss/vim-javascript'
-"Plugin 'flazz/vim-colorschemes'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'moll/vim-node'
-"Plugin 'mileszs/ack.vim'
-"Plugin 'vim-scripts/paredit.vim'
-"Plugin 'vim-scripts/yankring.vim'
-"Plugin 'rust-lang/rust.vim'
-"Plugin 'airblade/vim-gitgutter'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'racer-rust/vim-racer'
-"Bundle 'OmniSharp/omnisharp-vim'
-"Bundle 'neoclide/coc.nvim', {'branch': 'release'}
-"call vundle#end()            " required
 
 filetype plugin indent on    " required
 
@@ -90,8 +53,6 @@ map <F3> :NERDTreeToggle<CR>
 
 " colours
 set background=dark
-"colorscheme candycode
-"colorscheme frood
 colorscheme molokai
 
 " Spell check on
@@ -173,53 +134,11 @@ let g:ale_fixers = {
 \    'standard',
 \  ]
 \}
-"let g:ale_linters = {
-"\  'javascript': [
-"\    'prettier',
-"\    'eslint'
-"\  ]
-"\}
-"" let g:ale_linters_explicit = 1
-"let g:ale_fixers = {
-"\  'javascript': [
-"\    'prettier',
-"\    'eslint'
-"\  ]
-"\}
+
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
 let g:deoplete#enable_at_startup = 1
-
-augroup omnisharp_commands
-    autocmd!
-
-    " Show type information automatically when the cursor stops moving
-    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-
-    " The following commands are contextual, based on the cursor position.
-    autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
-
-    " Finds members in the current buffer
-    autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
-
-    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
-    autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
-    autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
-
-    " Navigate up and down by method/property/field
-    autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>
-    autocmd FileType cs nnoremap <buffer> <C-j> :OmniSharpNavigateDown<CR>
-
-    " Find all code errors/warnings for the current solution and populate the quickfix window
-    autocmd FileType cs nnoremap <buffer> <Leader>cc :OmniSharpGlobalCodeCheck<CR>
-augroup END
-
 
 " Coc settings follow 
 "
