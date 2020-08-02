@@ -40,11 +40,11 @@ bindsym $mod+grave exec chromium
 bindsym $mod+Shift+grave exec firefox
 
 # increase brightness 
-# bindcode 233 exec xbacklight -inc 10
-bindcode 233 exec brightlight -i 50 
+bindcode 233 exec xbacklight -inc 10
+# bindcode 233 exec xbacklight -inc 50 
 # decrease brightness 
-# bindcode 232 exec xbacklight -dec 10
-bindcode 232 exec brightlight -d 50
+bindcode 232 exec xbacklight -dec 10
+# bindcode 232 exec brightlight -d 50
 # increase volume 
 bindcode 123 exec amixer sset Master 10%+
 # decrease volume 
